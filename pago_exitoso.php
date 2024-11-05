@@ -85,6 +85,10 @@ if (!$result || mysqli_num_rows($result) == 0) {
             <p>Por favor, presenta tu identificación al recoger tu pedido.</p>
         </div>
 
+        <div id="contenedorMapa" style="display:none;">
+            <?php include("mapa.php"); ?>
+        </div>
+
         <div class="mt-6">
             <input type="submit" value="Confirmar Pedido" class="btn btn-primary">
         </div>
@@ -98,10 +102,12 @@ if (!$result || mysqli_num_rows($result) == 0) {
         var direccionInput = document.getElementById('direccionInput');
         var ciudadInput = document.getElementById('ciudadInput');
         var telefonoInput = document.getElementById('telefonoInput');
+        var mapa = document.getElementById('contenedorMapa');
 
         if (isDelivery) {
             // Mostrar los detalles del delivery
             deliveryDetails.style.display = 'block';
+            mapa.style.display = 'block';
             pickupDetails.style.display = 'none';
 
             // Hacer que los campos sean obligatorios
@@ -111,6 +117,7 @@ if (!$result || mysqli_num_rows($result) == 0) {
         } else {
             // Ocultar los detalles del delivery
             deliveryDetails.style.display = 'none';
+            mapa.style.display = 'none';
             pickupDetails.style.display = 'block';
 
             // Quitar la obligatoriedad de los campos
