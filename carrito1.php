@@ -33,7 +33,7 @@ $result = mysqli_query($mysqli, $query);
         <?php } ?>
     </div>
     <div class="mt-6">
-        <a href="metodos_de_page.php" class="btn btn-primary">Proceder al Pago</a>
+        <a href="metodos_de_pago.php" class="btn btn-primary">Proceder al Pago</a>
     </div>
 </main>
 <?php include("template/pie.php"); ?>
