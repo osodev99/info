@@ -30,6 +30,14 @@
     <link href="css/styless.css" rel="stylesheet">
     <!--tipo_idtipo le quite eso despues de nombre -->
 
+      <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- IonIcons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
 
 </head>
 
@@ -65,7 +73,13 @@
                             <div class="sb-nav-link-icon"><i class="fa fa-home fa-fw" aria-hidden="true"></i></div>
                             Inicio
                         </a>
-
+                        <?php if ($tipo_idtipo == 1) { ?><!--privilegiuos para solo para ADMIN empieza-->
+                            <div class="sb-sidenav-menu-heading">Pedidsos</div>
+                            <a class="nav-link" href="dashboard.php">
+                                <div class="sb-nav-link-icon"><i class="fa fa-book fa-fw" aria-hidden="true"></i></div>
+                                Dashboard
+                            </a>
+                        <?php } ?>
 
                         <?php if ($tipo_idtipo == 2) { ?><!--privilegiuos para solo para ADMIN empieza-->
                             <div class="sb-sidenav-menu-heading">Productos</div>
