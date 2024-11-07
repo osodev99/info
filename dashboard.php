@@ -16,16 +16,22 @@
 
 <?php include("template/cabecera.php"); ?>
 
-<body>
+<body class="container px-6 py-24">
+
+<div class="card m-4 p-2">
    <b>Ventas por mes</b> 
   <canvas id="graph" aria - label="chart" height="200"></canvas>
-  <hr>
 
+</div>
+<div class="card m-4 p-2">
    <b>Ventas de hoy</b> 
   <canvas id="graphhoy" aria - label="chart" height="200"></canvas>
-   
+</div>
+
+<div class="card m-4 p-2">
   <b>Estado de los pedidos</b> 
   <canvas id="graphestado" aria - label="chart" height="200"></canvas>
+</div>
 
  <script>
 
@@ -40,7 +46,7 @@ function ventasMes() {
         .then(data => {
             console.log('Datos recibidos:', data);
             let meses = data.map((d) => {
-                return d.mes;
+                return numeroAMes(d.mes);
             });
             let ventas = data.map((d) => {
                 return d.total_ventas;
@@ -78,6 +84,14 @@ function ventasMes() {
         .catch(error => {
             console.error('Error en la petición:', error);
         });
+}
+
+function numeroAMes(numero) {
+    const meses = [
+        'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 
+        'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'
+    ];
+    return meses[numero - 1]; // Restamos 1 porque los arrays en JavaScript son cero indexados
 }
 
 
@@ -191,8 +205,8 @@ function estadoPedidos() {
         });
 }
 
-// ventasMes();
-// ventasHoy();
+ventasMes();
+ventasHoy();
 estadoPedidos();
 
   </script>
