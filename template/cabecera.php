@@ -30,6 +30,7 @@
     <link href="css/styless.css" rel="stylesheet">
     <!--tipo_idtipo le quite eso despues de nombre -->
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
 
 </head>
 
@@ -65,6 +66,13 @@
                             <div class="sb-nav-link-icon"><i class="fa fa-home fa-fw" aria-hidden="true"></i></div>
                             Inicio
                         </a>
+                        <?php if ($tipo_idtipo == 1) { ?><!--privilegiuos para solo para ADMIN empieza-->
+                            <div class="sb-sidenav-menu-heading">Admin</div>
+                            <a class="nav-link" href="dashboard.php">
+                                <div class="sb-nav-link-icon"><i class="fa fa-book fa-fw" aria-hidden="true"></i></div>
+                                Dashboard
+                            </a>
+                        <?php } ?><!--privilegiuos para usuarios acabas-->
 
 
                         <?php if ($tipo_idtipo == 2) { ?><!--privilegiuos para solo para ADMIN empieza-->
